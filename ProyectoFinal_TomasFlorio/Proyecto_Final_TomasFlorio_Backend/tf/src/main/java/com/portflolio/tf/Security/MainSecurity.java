@@ -34,7 +34,6 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
     public JwtTokenFilter jwtTokenFilter(){
         return new JwtTokenFilter();
     }
-    
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
