@@ -1,6 +1,6 @@
 package com.portflolio.tf.Security;
 
-import com.portflolio.tf.Security.Service.UserDetailsImpl;
+import com.portflolio.tf.Security.Service.UserDetailsServiceImpl;
 import com.portflolio.tf.Security.jwt.JwtEntryPoint;
 import com.portflolio.tf.Security.jwt.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MainSecurity extends WebSecurityConfigurerAdapter{
     @Autowired
-    UserDetailsImpl userDetailsImpl;
+    UserDetailsServiceImpl userDetailsServiceImpl;
     @Autowired
     JwtEntryPoint jwtEntryPoint;
     
@@ -57,7 +57,7 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsImpl).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsServiceImpl).passwordEncoder(passwordEncoder());
     }
 
     

@@ -62,7 +62,7 @@ public class AuthController {
             return new ResponseEntity(new Mensaje("ese nombre de usuario ya existe"), HttpStatus.BAD_REQUEST);
         }
 
-        if (usuarioService.existByNombreUsuario(nuevoUsuario.getEmail())) {
+        if (usuarioService.existsByEmailUsuario(nuevoUsuario.getEmail())) {
             return new ResponseEntity(new Mensaje("ese Email ya existe"), HttpStatus.BAD_REQUEST);
         }
 
