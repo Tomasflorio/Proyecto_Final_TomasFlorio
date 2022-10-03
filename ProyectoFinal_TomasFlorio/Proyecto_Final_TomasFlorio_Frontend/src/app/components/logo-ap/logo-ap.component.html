@@ -9,7 +9,9 @@
             <a href=""><img src="../../../assets/twitter.png" alt="twitter"></a>
             <a href=""><img src="../../../assets/instagram.png" alt="instagram"></a>
             <a href=""><img src="../../../assets/github.png" alt="github"></a>
+            <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Ingreso</button>
+            <button type="button" class="btn btn-outline-light" (click)="onLogout()" *ngIf="isLogged">Cerrar Sesion</button>
         </div>
-        <button type="button" class="btn btn-outline-light" (click)="login()">Ingreso</button>
+
     </div>
 </div>
