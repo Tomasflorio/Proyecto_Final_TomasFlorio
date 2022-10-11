@@ -7,11 +7,8 @@ div{
 }
 @media (min-width: 576px){
     #fotoperfil{
-        position:absolute;
-        width: 15%;
+        width: 200px;
         border-radius: 100%;
-        left: 5%;
-        top: 2950px;
        
     }
 }

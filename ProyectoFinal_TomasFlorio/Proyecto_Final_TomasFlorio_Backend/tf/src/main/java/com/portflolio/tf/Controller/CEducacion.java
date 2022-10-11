@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/educacion")
 @CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "https://argprogramatf.web.app")
 public class CEducacion {
     
     @Autowired
@@ -85,7 +86,7 @@ public class CEducacion {
         return new ResponseEntity(new Mensaje("Educacion actualizada"),HttpStatus.OK);
     }
     
-    @GetMapping("/detail/{id}")
+    @GetMapping("/details/{id}")
     public ResponseEntity<Educacion> getById(@PathVariable("id") int id){
         if(!sEducacion.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el id"), HttpStatus.BAD_REQUEST);

@@ -1,37 +1,31 @@
-package com.portflolio.tf.Entity;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.portflolio.tf.Dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
+
 /**
  *
  * @author tomas
  */
-@Entity
-public class Persona {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class DtoPersona {
+    @NotBlank
     private int id;
-    @NotNull
-    @Size(min = 1, max = 50, message = "No cumple con el tamaño")
+    @NotBlank
     private String nombre;
-    @NotNull
-    @Size(min = 1, max = 50, message = "No cumple con el tamaño")
+    @NotBlank
     private String apellido;
-    
-    @NotNull
-    private String  descripcion;
-
+    @NotBlank
+    private String descripcion;
+    @NotBlank
     private String img;
 
-    public Persona() {
+    public DtoPersona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img) {
+    public DtoPersona(String nombre, String apellido, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
@@ -77,7 +71,5 @@ public class Persona {
     public void setImg(String img) {
         this.img = img;
     }
-    
-    
 
 }
